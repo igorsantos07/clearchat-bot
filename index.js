@@ -10,53 +10,42 @@ if (process.env.NODE_ENV == 'production') {
 console.log(bot.options)
 
 bot.onText(/^\/start$/, function(msg) {
-	bot.sendMessage(msg.from.id, 'Sorry, there\'s not much I can to for you here. Use me inline, like:\n@shruggerbot I don\'t care\nOr get details about me through /about')
+	bot.sendMessage(msg.from.id, 'Sorry, there\'s not much I can to for you here. See /help for usage tips, or /about to know more about me.')
 })
 
 bot.onText(/^\/help$/, function(msg) {
-	bot.sendMessage(msg.from.id, 'Simply use me inline, like: @shruggerbot I don\'t care\nYou can also get details about me on /about')
+	bot.sendMessage(msg.from.id, 'You can use me as a plain inline command (@clearchatbot), or use /clear in a group chat I\'m in. Oh, /about will tell you more about myself :)')
 })
 
 bot.onText(/^\/about$/, function(msg) {
 	bot.sendMessage(msg.from.id,
-		'[shrugger-bot@github](https://github.com/igorsantos07/shrugger-bot) by @igorsantos07\n'+
+		'[clearchat-bot@github](https://github.com/igorsantos07/clearchat-bot) by @igorsantos07\n'+
+		'I have a brother called *Shrugger Bot* (@shruggerbot), he may help you with ¯\_(ツ)_/¯ on your chats.\n'+
 		'\n'+
-		'This bot was inspired by the [shrug command](https://get.slack.help/hc/en-us/articles/201259356-Using-slash-commands) from [Slack](https://slack.com).\n'+
-		'Enjoy and keep shrugging!'
+		'Use clears with responsability ;)'
 	, { parse_mode: 'Markdown' })
 })
 
 bot.on('inline_query', function(msg) {
-	var shrug = '¯\\_(ツ)_/¯'
-	var options = [];
-	if (msg.query) {
-		options = [
-			{
-				type: 'article',
-				id: 'before',
-				title: shrug+' '+msg.query,
-				message_text: shrug+' '+msg.query,
-				description: 'Shrug first'
-			},
-			{
-				type: 'article',
-				id: 'after',
-				title: msg.query+' '+shrug,
-				message_text: msg.query+' '+shrug,
-				description: 'Surprise shrug at the end'
-			}
-		]
-	} else {
-		options = [{
-			type: 'article',
-			id: 'lonely',
-			title: shrug,
-			message_text: shrug,
-			description: 'Lazy shrug'
-		}]
-	}
-
-	bot.answerInlineQuery(msg.id, options)
+	bot.answerInlineQuery(msg.id, [{
+		type: 'article',
+		id: 'clear-20',
+		title: '20 lines',
+		message_text: '.'.repeat(60),
+		description: 'Enough lines to get something hidden with the keyboard open'
+	},{
+                type: 'article',
+                id: 'clear-40',
+                title: '40 lines',
+                message_text: '.'.repeat(60),
+                description: 'Covers space enough for high-end phones'
+        },{
+                type: 'article',
+                id: 'clear-60',
+                title: '60 lines',
+                message_text: '.'.repeat(60),
+               	description: 'Lines enough for most computer fullscreen clients'
+       	}])
 })
 
 console.log(bot.textRegexpCallbacks)
