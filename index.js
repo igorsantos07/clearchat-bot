@@ -20,7 +20,7 @@ bot.onText(/^\/help$/, function(msg) {
 bot.onText(/^\/about$/, function(msg) {
 	bot.sendMessage(msg.from.id,
 		'[clearchat-bot@github](https://github.com/igorsantos07/clearchat-bot) by @igorsantos07\n'+
-		'I have a brother called *Shrugger Bot* (@shruggerbot), he may help you with ¯\_(ツ)_/¯ on your chats.\n'+
+		'I have a brother called *Shrugger Bot* (@shruggerbot), he may help you shrug around your chats.\n'+
 		'\n'+
 		'Use clears with responsability ;)'
 	, { parse_mode: 'Markdown' })
