@@ -26,6 +26,12 @@ bot.onText(/^\/about$/, function(msg) {
 	, { parse_mode: 'Markdown' })
 })
 
+bot.onText(/^\/(?:clear|cls|clr)(\s\d+)?/, function(msg, lines) {
+	lines = parseInt(lines[1]) || 40
+	if (lines > 100) { lines = 100 }
+	bot.sendMessage(msg.chat.id, ('Total of nothingness: '+lines+' lines\n') + ('.\n'.repeat(lines-1)))
+})
+
 bot.on('inline_query', function(msg) {
 	bot.answerInlineQuery(msg.id, [{
 		type: 'article',
