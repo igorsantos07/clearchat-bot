@@ -1,7 +1,7 @@
 {
-  "name": "shrugger-bot",
+  "name": "clear-chat-bot",
   "version": "1.0.0",
-  "description": "Telegram bot for ¯\\_(ツ)_/¯",
+  "description": "Telegram bot to clear up chat screen",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://bitbucket.org/igorsantos07/shruggerbot.git"
+    "url": "git+https://bitbucket.org/igorsantos07/clearchat-bot.git"
   },
   "keywords": [
     "telegram",
     "bot"
   ],
   "author": "Igor Santos",
-  "license": "ISC",
-  "homepage": "https://bitbucket.org/igorsantos07/shruggerbot#readme",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/igorsantos07/clearchat-bot#readme",
   "dependencies": {
     "node-telegram-bot-api": "^0.20.1"
   }
