@@ -31,19 +31,19 @@ bot.on('inline_query', function(msg) {
 		type: 'article',
 		id: 'clear-20',
 		title: '20 lines',
-		message_text: '.'.repeat(60),
+		message_text: '.\n'.repeat(20),
 		description: 'Enough lines to get something hidden with the keyboard open'
 	},{
                 type: 'article',
                 id: 'clear-40',
                 title: '40 lines',
-                message_text: '.'.repeat(60),
+                message_text: '.\n'.repeat(40),
                 description: 'Covers space enough for high-end phones'
         },{
                 type: 'article',
                 id: 'clear-60',
                 title: '60 lines',
-                message_text: '.'.repeat(60),
+                message_text: '.\n'.repeat(60),
                	description: 'Lines enough for most computer fullscreen clients'
        	}])
 })
